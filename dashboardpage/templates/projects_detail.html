@@ -1,0 +1,21 @@
+{% extends 'dashboard.html' %}
+{% block content%}
+<center>
+    <div>
+        <h1 style="padding-top:50px">{{pr.title}}</h1>
+        <h3 style="margin-top:100px;">Tasks</h3>
+        {% for i in pr.tasks.all %}
+        {% if i.do == True %}
+        <a href="{% url 'detail_task' i.id%}"><button type="button" class="btn btn-success">{{i}}</button></a>
+        {% else%}
+        <a href="{% url 'detail_task' i.id%}"><button type="button" class="btn btn-danger">{{i}}</button></a>
+        {% endif %}
+        {% endfor %}
+        <br>
+        
+        <a href="{% url 'deleteproject' pr.id%}"><button style="margin-top:100px;" type="button" class="btn btn-outline-secondary">Delete</button></a>
+        <a href="{% url 'editproject' pr.id%}"><button style="margin-top:100px;" type="button" class="btn btn-outline-secondary">Edit</button></a>
+        <a href=""><button style="margin-top:100px;" type="button" class="btn btn-outline-secondary">Do</button></a>  
+    </div>
+</center>
+{% endblock content%}

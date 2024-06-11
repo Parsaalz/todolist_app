@@ -1,0 +1,19 @@
+{% extends 'dashboard.html' %}
+{% block content %}
+<center>
+<div style="width:500px;padding-top:200px;margin-left:280px">
+<form method="post" >
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Alarm_date</label>
+      {{tf.alarm_d}}
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Alarm_time</label>
+      {{tf.alarm_t}}
+    </div>
+    <button type="submit" class="btn btn-primary">Set</button>
+  </form>
+</div>
+</center>
+{% endblock content %}
