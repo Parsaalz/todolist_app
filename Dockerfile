@@ -15,3 +15,7 @@ RUN pip install -r requirements.txt
 
 # copy project
 COPY . .
+
+# set the default command to run when container starts
+CMD ["python", "app.py"]
+
